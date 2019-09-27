@@ -1,6 +1,7 @@
 # Weather Station made with Arduino Uno for a school project
 ## Files
  * ```code/code.ino``` Code file compiled on the Arduino Uno
+ * ```weather_station.apk``` Installation APK file for Android
  * ```Model.fzz``` Wiring model file for [Fritzing](https://fritzing.org/)
  * ```Model-Image.png``` Wiring model image :
 ![Wiring image](https://raw.githubusercontent.com/Tchekda/Arduino-Weather-Station/master/Model-Image.png)
