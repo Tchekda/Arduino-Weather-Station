@@ -175,7 +175,7 @@ void loop() {
   BTSerial.print(finalTemp);
   BTSerial.print("&");
   BTSerial.print(lightValue);
-  BTSerial.print("\n");
+  BTSerial.print("&\n");
 
   readBTCommand();
   
