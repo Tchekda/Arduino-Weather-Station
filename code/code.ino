@@ -4,7 +4,7 @@ int blueLEDPin = 13;
 int redLEDPin = 12;
 // Temperature default and constant values
 int ThermistorPin = A2;
-float Vo, T, finalTemp, tempDiff = 47.;
+float Vo, T, finalTemp, tempDiff = 42.;
 float R1 = 10000; // value of R1 on board
 float logR2, R2;
 float c1 = 0.001129148, c2 = 0.000234125, c3 = 0.0000000876741; //steinhart-hart coeficients for thermistor
@@ -120,6 +120,10 @@ void loop() {
         buzzer(90);
         tempBuzzed = true;
         lcd.print("Too Cold!! ");
+      }else {
+        lcd.print("Light : ");
+        lcd.print(lightValue);
+        lcd.print(" lux");
       }
     digitalWrite(blueLEDPin, HIGH);
     }else if (finalTemp >= 25){ // If too Hot
@@ -127,11 +131,18 @@ void loop() {
         buzzer(90);
         tempBuzzed = true;
         lcd.print("Too Hot!! ");
+      }else {
+        lcd.print("Light : ");
+        lcd.print(lightValue);
+        lcd.print(" lux");
       }
       digitalWrite(redLEDPin, HIGH);
     }
     delay(1500);
   }else {
+    if (tempBuzzed){
+      tempBuzzed = false;
+    }
     lcd.setCursor(0, 0);
     lcd.print("Temp: ");
     lcd.print(finalTemp);
@@ -164,7 +175,7 @@ void loop() {
   BTSerial.print(finalTemp);
   BTSerial.print("&");
   BTSerial.print(lightValue);
-  BTSerial.print("&");
+  BTSerial.print("\n");
 
   readBTCommand();
   
