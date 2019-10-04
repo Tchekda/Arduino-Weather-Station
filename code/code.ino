@@ -104,6 +104,8 @@ void loop() {
   // Disable both Leds at the beginning of the loop
   digitalWrite(blueLEDPin, LOW);
   digitalWrite(redLEDPin, LOW);
+
+  lcd.clear();
   
   analogToDegree(analogRead(ThermistorPin)); // Get Analog value and convert it to Celcius degrees
   Serial.print("Temperature = ");
