@@ -111,7 +111,7 @@ void loop() {
   if (finalTemp <= 17 || finalTemp >= 25){
     lcd.setCursor(0, 0);
     lcd.clear();
-    lcd.print("Temp: ");
+    lcd.print("Temp : ");
     lcd.print(finalTemp);
     lcd.print(" C");
     lcd.setCursor(0, 1);
@@ -144,7 +144,7 @@ void loop() {
       tempBuzzed = false;
     }
     lcd.setCursor(0, 0);
-    lcd.print("Temp: ");
+    lcd.print("Temp : ");
     lcd.print(finalTemp);
     lcd.print(" C");
   }
